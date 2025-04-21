@@ -1,5 +1,12 @@
 name: Hello World Workflow
-on: [push]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 12 * * *'  # every day at noon UTC
+  workflow_dispatch:  # manual trigger button
 
 jobs:
   hello:
