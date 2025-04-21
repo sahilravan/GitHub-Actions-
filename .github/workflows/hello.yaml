@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-    - cron: '0 12 * * *'  # every day at noon UTC
+    - cron: '30 13 * * *'  # every day at noon UTC
   workflow_dispatch:  # manual trigger button
 
 jobs:
