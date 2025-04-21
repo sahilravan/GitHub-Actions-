@@ -1,16 +1,18 @@
-name: Hello World Workflow
+name: Real Workflow
+
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  schedule:
-    - cron: '30 13 * * *'  # every day at noon UTC
-  workflow_dispatch:  # manual trigger button
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
-  hello:
+  test-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Hello
-        run: echo "Hello from Sahil’s first GitHub Action!"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Say Hi
+        run: |
+          echo "Welcome Sahil!"
+          echo "Today is $(date)"
